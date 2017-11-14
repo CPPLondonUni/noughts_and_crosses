@@ -65,15 +65,13 @@ std::ostream& operator<<(std::ostream& os, const board& b)
 // TODO: Implement this function correctly
 bool check_winner(const board& b, entry e)
 {
-    return false;
+    return true;
 }
 
 // TODO: Implement this function correctly
-bool check_draw(const board&)
+bool check_draw(const board& b)
 {
-    return false;
+    return true;
 }
-
-
 
 }
