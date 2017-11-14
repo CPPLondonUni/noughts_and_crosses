@@ -59,4 +59,13 @@ You are free to change or add to any of the given files in any way you
 like, or add new files to the project. The provided functions are merely intended
 to help you get started -- you are  not required to use them.
 
+## Hints ##
+
+* Before writing any code, think about how to break down the game into individual
+  functions, like `check_winner()` and `check_draw()`. Perhaps have one or two
+  team members work on (and test) each function before bringing them together.
+  
+* Concentrate on implementing the main game logic first. Add score tracking,
+  multiple games etc later if you have time.
+
 **Have fun!**
