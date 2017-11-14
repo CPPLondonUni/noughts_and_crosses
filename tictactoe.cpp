@@ -62,15 +62,42 @@ std::ostream& operator<<(std::ostream& os, const board& b)
     return os;
 }
 
-// TODO: Implement this function correctly
 bool check_winner(const board& b, entry e)
 {
-    return true;
+    // Check rows
+    for (int i = 0; i < 3; i++) {
+        if (b(i, 0) == e &&
+                b(i, 1) == e &&
+                b(i, 2) == e) {
+            return true;
+        }
+    }
+
+    // Check columns
+    for (int i = 0; i < 3; i++) {
+        if (b(0, i) == e &&
+                b(1, i) == e &&
+                b(2, i) == e) {
+            return true;
+        }
+    }
+
+    // Check diagonals
+    if (b(0, 0) == e && b(1, 1) == e && b(2, 2) == e) return true;
+    if (b(0, 2) == e && b(1, 2) == e && b(2, 0) == e) return true;
+
+    return false;
 }
 
-// TODO: Implement this function correctly
 bool check_draw(const board& b)
 {
+    // A game is a draw if all cells in the board are non-empty, and nobody
+    // has won
+    for (const auto e : b) {
+        if (e == entry::empty) {
+            return false;
+        }
+    }
     return true;
 }
 

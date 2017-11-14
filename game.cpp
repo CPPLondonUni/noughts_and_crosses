@@ -44,8 +44,29 @@ game_result run_game(std::array<tictactoe::player, 2>& players, int starting_pla
 
     while (true) {
         while (true) {
-            // Implement this!
-            break;
+            std::cout << board;
+            std::cout << players[current_player].name << ", it's your turn\n";
+
+            int row_num = -1;
+            int col_num = -1;
+
+            while (row_num < 0 || row_num > 2) {
+                std::cout << "Enter row number [0 - 2]:\n";
+                std::cin >> row_num;
+            }
+
+            while (col_num < 0 || col_num > 2) {
+                std::cout << "Enter column number [0 - 2]:\n";
+                std::cin >> col_num;
+            }
+
+            if (board(row_num, col_num) == tictactoe::entry::empty) {
+                board(row_num, col_num) = players[current_player].token;
+                break;
+            }
+            else {
+                std::cout << "I'm sorry, that square is taken. Try again\n";
+            }
         }
 
         if (tictactoe::check_winner(board, players[current_player].token)) {
